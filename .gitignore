@@ -2,3 +2,5 @@ obj
 bin
 appsettings.json
 *.db
+client/ssl/server.crt
+client/ssl/server.key
