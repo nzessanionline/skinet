@@ -1,0 +1,23 @@
+<pagination
+[boundaryLinks]="true"
+[totalItems]="totalCount"
+(pageChanged) ="onPagerChange($event)"
+[itemsPerPage] = "pageSize"
+previousText="&lsaquo;"
+nextText="&rsaquo;"
+firstText="&laquo;"
+lastText="&raquo;"
+>
+</pagination>
+
+<!-- <pagination
+[boundaryLinks]="true"
+[totalItems]="this.totalCount"
+(pageChanged) ="onPageChanged($event)"
+[itemsPerPage] = "this.shopParams.pageSize"
+previousText="&lsaquo;"
+nextText="&rsaquo;"
+firstText="&laquo;"
+lastText="&raquo;"
+>
+</pagination> -->
