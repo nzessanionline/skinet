@@ -5,6 +5,7 @@ import { ReplaySubject } from 'rxjs/internal/ReplaySubject';
 import { environment } from 'src/environments/environment';
 import { IUser } from '../shared/models/user';
 import { map } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,10 @@ export class AccountService {
   constructor(private http: HttpClient, private router: Router) { }
 
   loadCurrentUser(token: string) {
-    // if (token === null) {
-    //   this.currentUserSource.next(null);
-    //   return of(null);
-    // }
+    if (token === null) {
+      this.currentUserSource.next(null);
+      return of(null);
+    }
 
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', `Bearer ${token}`);
