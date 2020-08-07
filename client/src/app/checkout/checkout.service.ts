@@ -5,7 +5,6 @@ import { map } from 'rxjs/operators';
 import {IDeliveryMethod} from '../shared/models/deliveryMethod';
 import { IOrderToCreate } from '../shared/models/order';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -17,6 +16,7 @@ export class CheckoutService {
   creatOrder(order: IOrderToCreate) {
     return this.http.post(this.baseUrl + 'orders', order);
   }
+
   getDeliveryMethods() {
     return this.http.get(this.baseUrl + 'orders/deliveryMethods').pipe(
       map((dm: IDeliveryMethod[]) => {
@@ -25,3 +25,4 @@ export class CheckoutService {
     );
   }
 }
+
